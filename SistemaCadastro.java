@@ -1,3 +1,8 @@
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.time.LocalDate;
 import classes.Cadastro;
 import classes.Sexo;
@@ -31,7 +36,7 @@ public class SistemaCadastro {
         gerarItem(cadastro);
     }
 
-    public static StringBuilder gerarItem(Cadastro item){
+    public static void gerarItem(Cadastro item){
         StringBuilder novaString = new StringBuilder();
 
         novaString.append(item.nome + ";");
@@ -56,10 +61,20 @@ public class SistemaCadastro {
         novaString.append(item.pretencaoMaxima + ";");
         novaString.append(item.habilidades + ";");
 
-        return novaString;
+        System.out.println(novaString);
+
+        cadastrar(novaString);
     }
 
-    public void cadastrar(String item){
+    public static void cadastrar(StringBuilder item){
+        String itemEnvio = item.toString() + System.lineSeparator();
 
+        try{
+            Path path = Paths.get("./arquivo/cadastro.csv");
+                       
+            Files.write(path, itemEnvio.getBytes(StandardCharsets.UTF_8), StandardOpenOption.CREATE, StandardOpenOption.APPEND);
+        } catch (Exception exception){
+            System.out.println();
+        }        
     }
 }
