@@ -78,7 +78,7 @@ public class SistemaCadastro {
         novaString.append(item.getCadastroExperiencia().getEmpresa().getNome() + ";");
         novaString.append(item.getCadastroExperiencia().getSalario() + ";");
         novaString.append(item.getCadastroExperiencia().getEmpregoAtual() + ";");
-        
+
 
         System.out.println(novaString);
 
@@ -90,10 +90,43 @@ public class SistemaCadastro {
 
         try{
             Path path = Paths.get("./arquivo/cadastro.csv");
-                       
+            byte[] bytesArquivo =  Files.readAllBytes(path);
+            String conteudo = new String(bytesArquivo);
+
+            if(conteudo.length() == 0){
+                StringBuilder cabecalho = new StringBuilder();
+                
+                cabecalho.append("Nome" + ";");
+                cabecalho.append("Cpf" + ";");
+                cabecalho.append("Data de Nascimento" + ";");
+                cabecalho.append("Email" + ";");
+                cabecalho.append("Telefone" + ";");
+                cabecalho.append("Habilidades" + ";");
+                cabecalho.append("Profissão" + ";");
+                cabecalho.append("Pretenção Mínima" + ";");
+                cabecalho.append("Pretenção Máxima" + ";");
+                cabecalho.append("Sexo" + ";");
+                cabecalho.append("Celular Pessoal" + ";");
+                cabecalho.append("Celular Pessoal Whats?" + ";");
+                cabecalho.append("Celular Profissional" + ";");
+                cabecalho.append("Celular Profissional Whats?" + ";");
+                cabecalho.append("Logradouro" + ";");
+                cabecalho.append("Número" + ";");
+                cabecalho.append("Bairro" + ";");
+                cabecalho.append("Complemento" + ";");
+                cabecalho.append("Cidade" + ";");
+                cabecalho.append("Estado" + ";");
+                cabecalho.append("Empresa" + ";");
+                cabecalho.append("Salário" + ";");
+                cabecalho.append("Emprego Atual?" + ";");
+            
+                String cabecalhoEnvio = cabecalho.toString() + System.lineSeparator();
+                Files.write(path, cabecalhoEnvio.getBytes(StandardCharsets.UTF_8), StandardOpenOption.CREATE, StandardOpenOption.APPEND);
+            }
+                    
             Files.write(path, itemEnvio.getBytes(StandardCharsets.UTF_8), StandardOpenOption.CREATE, StandardOpenOption.APPEND);
         } catch (Exception exception){
-            System.out.println();
+            System.out.println(exception);
         }        
     }
 }
