@@ -36,9 +36,12 @@ public class SistemaCadastro {
             new PretencaoSalarial(10500.75, 20000.00),
             Sexo.Masculino,
             new Celular(21998754510L, true),
-            new Celular(21976439034L, false)
-
+            new Celular(21976439034L, false),
+            new Endereco(2505525L, "Rua do Bispo", "71", "Casa", "Rio Comprido", new Cidade(0, "Rio de Janeiro", "Rio de Janeiro", "RJ")),
+            new CadastroExperiencia(0, 8300.25, true, LocalDate.parse("2019-07-01"), null, RegimeContratacao.CLT, new Empresa(0, "MJV"))
         );
+
+        cadastro.getCadastroExperiencia().setProfissao(cadastro.getProfissao());
 
         gerarItem(cadastro);
     }
@@ -66,6 +69,17 @@ public class SistemaCadastro {
         novaString.append(item.getCelularPessoal().getCelularWhats() + ";");
         novaString.append(item.getCelularProfissional().getNumero() + ";");
         novaString.append(item.getCelularProfissional().getCelularWhats() + ";");
+        novaString.append(item.getEndereco().getLogradouro() + ";");
+        novaString.append(item.getEndereco().getNumero() + ";");
+        novaString.append(item.getEndereco().getBairro() + ";");
+        novaString.append(item.getEndereco().getComplemento() + ";");
+        novaString.append(item.getEndereco().getCidade().getNome() + ";");
+        novaString.append(item.getEndereco().getCidade().getEstado() + ";");
+        novaString.append(item.getCadastroExperiencia().getEmpresa().getNome() + ";");
+        novaString.append(item.getCadastroExperiencia().getSalario() + ";");
+        novaString.append(item.getCadastroExperiencia().getEmpregoAtual() + ";");
+        
+
         System.out.println(novaString);
 
         cadastrar(novaString);

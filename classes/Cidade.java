@@ -1,10 +1,10 @@
 package classes;
 
 public class Cidade {
-    public int id;
-    public String nome;
-    public String estado;
-    public String sigla;
+    private int id;
+    private String nome;
+    private String estado;
+    private String sigla;
 
     public Cidade(int id, String nome, String estado, String sigla) {
         this.id = id;

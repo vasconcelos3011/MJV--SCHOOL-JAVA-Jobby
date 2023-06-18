@@ -1,8 +1,8 @@
 package classes;
 
 public class Empresa {
-    public int id;
-    public String nome;
+    private int id;
+    private String nome;
 
     public Empresa(int id, String nome) {
         this.id = id;
@@ -17,7 +17,7 @@ public class Empresa {
         this.id = id;
     }
 
-    public String nome() {
+    public String getNome() {
         return nome;
     }
 

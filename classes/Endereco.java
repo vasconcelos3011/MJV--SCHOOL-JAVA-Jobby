@@ -1,18 +1,20 @@
 package classes;
 
 public class Endereco {
-    public long cep;
-    public String logradouro;
-    public String numero;
-    public String complemento;
-    public String bairro;
+    private long cep;
+    private String logradouro;
+    private String numero;
+    private String complemento;
+    private String bairro;
+    private Cidade cidade;
 
-    public Endereco(long cep, String logradouro, String numero, String complemento, String bairro){
+    public Endereco(long cep, String logradouro, String numero, String complemento, String bairro, Cidade cidade){
         this.cep = cep;
         this.logradouro = logradouro;
         this.numero = numero;
         this.complemento = complemento;
         this.bairro = bairro;
+        this.cidade = cidade;
     }
 
     public long getCep(){
@@ -53,5 +55,13 @@ public class Endereco {
 
     public void setBairro(String bairro){
         this.bairro = bairro;
+    }
+   
+    public Cidade getCidade(){
+        return cidade;
+    }
+
+    public void setCidade(Cidade cidade){
+        this.cidade = cidade;
     }
 }

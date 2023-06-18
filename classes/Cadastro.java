@@ -16,8 +16,10 @@ public class Cadastro {
     private Sexo sexo;
     private Celular celularPessoal;
     private Celular celularProfissional;
+    private Endereco endereco; 
+    private CadastroExperiencia cadastroExperiencia;
 
-    public Cadastro(String nome, String cpf, LocalDate dataNascimento, String email, long telefone, ArrayList<String> habilidades, ArrayList<Profissao> profissao, PretencaoSalarial pretencaoSalarial, Sexo sexo, Celular celularPessoal, Celular celularProfissional) {  
+    public Cadastro(String nome, String cpf, LocalDate dataNascimento, String email, long telefone, ArrayList<String> habilidades, ArrayList<Profissao> profissao, PretencaoSalarial pretencaoSalarial, Sexo sexo, Celular celularPessoal, Celular celularProfissional, Endereco endereco, CadastroExperiencia cadastroExperiencia) {  
         this.nome = nome;
         this.cpf = cpf;
         this.dataNascimento = dataNascimento;
@@ -29,6 +31,8 @@ public class Cadastro {
         this.sexo = sexo;
         this.celularPessoal = celularPessoal;
         this.celularProfissional = celularProfissional;
+        this.endereco = endereco;
+        this.cadastroExperiencia = cadastroExperiencia;
     }
 
     public String getNome() {
@@ -117,6 +121,21 @@ public class Cadastro {
 
     public void setCelularProfissional(Celular celular){
         this.celularProfissional = celular;
+    }
+    
+    public Endereco getEndereco(){
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco){
+        this.endereco = endereco;
+    }
+
+    public CadastroExperiencia getCadastroExperiencia(){
+        return cadastroExperiencia;
+    }
+    public void setCadastroExperiencia(CadastroExperiencia cadastroExperiencia){
+        this.cadastroExperiencia = cadastroExperiencia;
     }
 }
 
