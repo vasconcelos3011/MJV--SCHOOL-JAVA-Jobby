@@ -1,56 +1,122 @@
 package classes;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
-public class Cadastro {
-    public String nome;    
-    public String cpf;
-    public LocalDate dataNascimento;
-    public Sexo sexo;
-    public String logradouro;
-    public int numero;
-    public String complemento;
-    public String bairro;
-    public String cidade;
-    public String estado;
-    public String email;
-    public long telefone;
-    public long celular;
-    public boolean celularWhats;
-    public String profissao;
-    public String empresa;
-    public double salario;
-    public boolean empregoAtual;
-    public double pretencaoMinima;
-    public double pretencaoMaxima;
-    public String habilidades;
+public class Cadastro { 
+    private String nome;    
+    private String cpf;
+    private LocalDate dataNascimento;    
+    private String email;
+    private long telefone;
+    private ArrayList<String> habilidades = new ArrayList<String>();
+    
+    private ArrayList<Profissao> profissao = new ArrayList<Profissao>();
+    private PretencaoSalarial pretencaoSalarial;
+    private Sexo sexo;
+    private Celular celularPessoal;
+    private Celular celularProfissional;
 
-    public Cadastro(String nome, String cpf, LocalDate dataNascimento, Sexo sexo, String logradouro, int numero, String complemento, 
-        String bairro, String cidade, String estado, String email, long telefone, long celular, boolean celularWhats, 
-        String profissao, String empresa, double salario, Boolean empregoAtual, double pretensaoMinima, double pretensaoMaxima,
-        String habilidades) {
-            
+    public Cadastro(String nome, String cpf, LocalDate dataNascimento, String email, long telefone, ArrayList<String> habilidades, ArrayList<Profissao> profissao, PretencaoSalarial pretencaoSalarial, Sexo sexo, Celular celularPessoal, Celular celularProfissional) {  
         this.nome = nome;
         this.cpf = cpf;
         this.dataNascimento = dataNascimento;
-        this.sexo = sexo;
-        this.logradouro = logradouro;
-        this.numero = numero;
-        this.complemento = complemento;
-        this.bairro = bairro;
-        this.cidade = cidade;
-        this.estado = estado;
         this.email = email;
         this.telefone = telefone;
-        this.celular = celular;
-        this.celularWhats = celularWhats;
-        this.profissao = profissao;
-        this.empresa = empresa;
-        this.salario = salario;
-        this.empregoAtual = empregoAtual;
-        this.pretencaoMinima = pretensaoMinima;
-        this.pretencaoMaxima = pretensaoMaxima;
+        this.habilidades.addAll(habilidades);
+        this.profissao.addAll(profissao);
+        this.pretencaoSalarial = pretencaoSalarial;
+        this.sexo = sexo;
+        this.celularPessoal = celularPessoal;
+        this.celularProfissional = celularProfissional;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome){
+        this.nome = nome;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf){
+        this.cpf = cpf;
+    }
+
+    public LocalDate getDataNascimento(){
+        return dataNascimento;
+    }
+
+    public void setDataNascimento(LocalDate dataNascimento){
+        this.dataNascimento = dataNascimento;
+    }
+
+    public String getEmail(){
+        return email;
+    }
+
+    public void setEmail(String email){
+        this.email = email;
+    }
+
+    public long getTelefone(){
+        return telefone;
+    }
+
+    public void setTelefone(long telefone){
+        this.telefone = telefone;
+    }
+
+    public ArrayList<String> getHabilidades(){
+        return habilidades;
+    }
+
+    public void setHabilidades(ArrayList<String> habilidades){
         this.habilidades = habilidades;
+    }
+
+    public ArrayList<Profissao> getProfissao(){
+        return profissao;
+    }
+
+    public void setProfissao(ArrayList<Profissao> profissao) {
+        this.profissao = profissao;
+    }
+
+    public PretencaoSalarial getPretencaoSalarial(){
+        return pretencaoSalarial;
+    }
+
+    public void setPretencaoSalarial(PretencaoSalarial pretencaoSalarial){
+        this.pretencaoSalarial = pretencaoSalarial;
+    }
+
+    public Sexo getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(Sexo sexo){
+        this.sexo = sexo;
+    }
+
+    public Celular getCelularPessoal(){
+        return celularPessoal;
+    }
+
+    public void setCelularPessoal(Celular celular){
+        this.celularPessoal = celular;
+    }
+
+    public Celular getCelularProfissional(){
+        return celularProfissional;
+    }
+
+    public void setCelularProfissional(Celular celular){
+        this.celularProfissional = celular;
     }
 }
 
