@@ -37,7 +37,7 @@ Contribuição
 * Abra um pull request, descrevendo em detalhes suas alterações.
 
 Suporte
-Se você tiver alguma dúvida, sugestão ou encontrar algum problema, sinta-se à vontade para abrir uma nova issue neste repositório.
+* Se você tiver alguma dúvida, sugestão ou encontrar algum problema, sinta-se à vontade para abrir uma nova issue neste repositório.
 
 Autores
 * Thatiane Vasconcelos
